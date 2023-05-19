@@ -92,7 +92,6 @@ class Kurs(Szkola):
 
 class Student(Szkola):
     kursy_studenta=[]
-    oceny=[]
     def __init__(self,kursy):
         self.pesel=input("Podaj pesel studenta")
         self.email=input("Podaj email")
@@ -117,7 +116,7 @@ class Student(Szkola):
 
 objekt_szkola = Szkola()
 
-print("Klasa szkoła:")      #testowanie jak działa program (czy działa)
+print("Klasa szkoła:")      #wyświetlenie aktualnej struktury szkoly
 for s in Szkola.studenci:
     print(s.__dict__)
 for s in Szkola.nauczyciele:
@@ -125,20 +124,14 @@ for s in Szkola.nauczyciele:
 for s in Szkola.kursy:
     print(s.__dict__)
 
-print("Studenci posortowani alfabetycznie wzgledem email ")
-objekt_szkola.wypisanie_studentów_email()
-
 value=input(" Podaj semestr z jakiego mają zostać wypisane kursy ")
 print("Kursy z dnego semestru")
 objekt_szkola.wypisanie_kursow(value)
 
-print("Studenci posortowani względem wieku (od najmłodszego do najstarszego ")
-objekt_szkola.wypisanie_studentow_wiekiem()
-
 print("Teraz dodajemy pojedyncze objekty: kurs,ucznia,nauczyciela")
 objekt_szkola.dodaj_kurs()
 objekt_szkola.dodaj_ucznia()
-objekt_szkola.student.dodaj_ocene()
+objekt_szkola.dodaj_nauczyciela()
 
 
 

@@ -1,0 +1,1 @@
+Jest to program, który tworzy małą strukturę szkoły. 
